@@ -55,6 +55,8 @@
   - type: Rotatable
   - type: Pullable
   - type: CollideOnAnchor
+  - type: DisposalTube
+    disposalTubeType: Transit
   - type: ContainerContainer
     containers:
       DisposalTube: !type:Container
