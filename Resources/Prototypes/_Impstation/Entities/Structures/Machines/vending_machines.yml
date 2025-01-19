@@ -35,7 +35,7 @@
   parent: VendingMachineChemicals
   id: VendingMachineChemicalsInterdyne
   name: Interdyne ChemVend
-  description: A high tech ChemVend built by InterDyne. Backwards compatible with standard ChemVend restocks. # DeltaV: Add chemvend part
+  description: A high tech ChemVend built by InterDyne. Backwards compatible with standard ChemVend restocks.
   components:
   - type: VendingMachine
     pack: ChemVendInventoryInterdyne
@@ -44,8 +44,8 @@
     normalState: normal
     denyState: deny
     ejectDelay: 2
-    soundVend: /Audio/_Impstation/Machines/vending_drop.ogg #imp
-  - type: Sprite # imp
+    soundVend: /Audio/_Impstation/Machines/vending_drop.ogg
+  - type: Sprite
     sprite: _Impstation/Structures/Machines/VendingMachines/interdynechemdispenser.rsi
     layers:
     - state: "off"
