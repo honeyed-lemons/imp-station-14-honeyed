@@ -494,7 +494,7 @@
   - type: PresetIdCard
     job: Roboticist
 
-- type: entity
+- type: entity 
   parent: IDCardStandard
   id: CentcomIDCard
   name: command officer ID card
@@ -506,8 +506,6 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CentralCommandOfficial
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -524,8 +522,6 @@
     job: ERTLeader
   - type: Item
     heldPrefix: gold
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -542,8 +538,6 @@
     job: ERTChaplain
   - type: Item
     heldPrefix: blue
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -558,8 +552,6 @@
     jobIcon: JobIconERTEngineer
   - type: PresetIdCard
     job: ERTEngineer
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -574,8 +566,6 @@
     jobIcon: JobIconERTJanitor
   - type: PresetIdCard
     job: ERTJanitor
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -590,8 +580,6 @@
     jobIcon: JobIconERTMedic
   - type: PresetIdCard
     job: ERTMedical
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -605,9 +593,7 @@
     jobTitle: job-name-ertsecurity
     jobIcon: JobIconERTSecurity
   - type: PresetIdCard
-    job: ERTSecurity
-  - type: NanoChatCard # DeltaV
-    listNumber: false
+    job: ERTSecurity 
 
 - type: entity
   parent: IDCardStandard
@@ -636,8 +622,6 @@
     jobIcon: JobIconDeathsquad
   - type: PresetIdCard
     job: DeathSquad
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -690,8 +674,6 @@
         type: AgentIDCardBoundUserInterface
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   name: passenger ID card
@@ -729,8 +711,6 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -744,8 +724,6 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -820,8 +798,6 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CBURN
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -836,8 +812,6 @@
   - type: IdCard
     jobTitle: job-title-cluwne
   - type: Unremoveable
-  - type: NanoChatCard # DeltaV
-    listNumber: false
 
 - type: entity
   parent: EngineeringIDCard
@@ -905,9 +879,6 @@
     - NuclearOperative
     - SyndicateAgent
     - Wizard
-  - type: NanoChatCard # DeltaV
-    notificationsMuted: true
-    listNumber: false
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
