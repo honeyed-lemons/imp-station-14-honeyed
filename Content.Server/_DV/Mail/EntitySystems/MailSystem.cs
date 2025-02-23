@@ -79,8 +79,6 @@ public sealed class MailSystem : EntitySystem
     [Dependency] private readonly RadioSystem _radioSystem = default!; // imp
     [Dependency] private readonly IGameTiming _timing = default!; // imp
 
-    private ISawmill _sawmill = default!;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -115,7 +113,7 @@ public sealed class MailSystem : EntitySystem
                 continue;
 
             TimeSpan nextTimeToAdd;
-            if (_random.Prob(0.5f)) // weight the result towards the average. 
+            if (_random.Prob(0.5f)) // weight the result towards the average.
                 nextTimeToAdd = _random.Next(mailTeleporter.MinInterval, mailTeleporter.MaxInterval);
             else
                 nextTimeToAdd = mailTeleporter.AverageInterval;
@@ -467,7 +465,7 @@ public sealed class MailSystem : EntitySystem
         {
             if (!_container.Insert(entity, container))
             {
-                _sawmill.Error($"Can't insert {ToPrettyString(entity)} into new mail delivery {ToPrettyString(uid)}! Deleting it.");
+                Log.Error($"Can't insert {ToPrettyString(entity)} into new mail delivery {ToPrettyString(uid)}! Deleting it.");
                 QueueDel(entity);
             }
             else if (!mailComp.IsFragile && IsEntityFragile(entity, _config.GetCVar(DCCVars.MailFragileDamageThreshold)))
@@ -648,7 +646,7 @@ public sealed class MailSystem : EntitySystem
     {
         if (!Resolve(uid, ref component))
         {
-            _sawmill.Error($"Tried to SpawnMail on {ToPrettyString(uid)} without a valid MailTeleporterComponent!");
+            Log.Error($"Tried to SpawnMail on {ToPrettyString(uid)} without a valid MailTeleporterComponent!");
             return;
         }
 
@@ -657,15 +655,15 @@ public sealed class MailSystem : EntitySystem
 
         var candidateList = GetMailRecipientCandidates(uid);
 
-        if (candidateList.Count <= 0)
+        if (candidateList.Count == 0)
         {
-            _sawmill.Error("List of mail candidates was empty!");
+            Log.Error("List of mail candidates was empty!");
             return;
         }
 
         if (!_prototypeManager.TryIndex<MailDeliveryPoolPrototype>(component.MailPool, out var pool))
         {
-            _sawmill.Error($"Can't index {ToPrettyString(uid)}'s MailPool {component.MailPool}!");
+            Log.Error($"Can't index {ToPrettyString(uid)}'s MailPool {component.MailPool}!");
             return;
         }
 
@@ -709,7 +707,7 @@ public sealed class MailSystem : EntitySystem
 
             if (chosenParcel == null)
             {
-                _sawmill.Error($"MailSystem wasn't able to find a deliverable parcel for {candidate.Name}, {candidate.Job}!");
+                Log.Error($"MailSystem wasn't able to find a deliverable parcel for {candidate.Name}, {candidate.Job}!");
                 return;
             }
 
@@ -752,7 +750,7 @@ public sealed class MailSystem : EntitySystem
         if (!_container.TryGetContainer(uid, "contents", out var contents))
         {
             // I silenced this error because it fails non deterministically in tests and doesn't seem to effect anything else.
-            // _sawmill.Error($"Mail {ToPrettyString(uid)} was missing contents container!");
+            // Log.Error($"Mail {ToPrettyString(uid)} was missing contents container!");
             return;
         }
 
