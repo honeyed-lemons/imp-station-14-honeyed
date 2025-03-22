@@ -7,6 +7,6 @@ namespace Content.Server.Disposal.Tube.Components
     public sealed partial class DisposalEntryComponent : Component
     {
         [DataField]
-        public string HolderPrototypeId = "DisposalHolder";
+        public string HolderPrototypeId = "DisposalHolder"; //imp edit
     }
 }

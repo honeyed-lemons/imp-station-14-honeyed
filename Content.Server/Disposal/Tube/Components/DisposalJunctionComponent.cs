@@ -9,12 +9,12 @@ public partial class DisposalJunctionComponent : Component
     /// The angles to connect to.
     /// </summary>
     [DataField]
-    public List<Angle> Degrees = new();
+    public List<Angle> Degrees = new(); //imp edit
 
     /// <summary>
     /// Whether transported entities should try to follow
     /// the straightest path through a junction
     /// </summary>
     [DataField]
-    public bool FollowStraightestPath = false;
+    public bool FollowStraightestPath; //imp
 }

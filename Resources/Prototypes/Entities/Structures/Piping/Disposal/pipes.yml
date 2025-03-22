@@ -9,8 +9,8 @@
     - Disposal
   components:
   - type: Sprite
-    drawdepth: ThickPipe
-    sprite: Structures/Piping/disposal.rsi
+    drawdepth: ThickPipe #Imp
+    sprite: Structures/Piping/disposal.rsi #Imp
     visible: false
   - type: Appearance
   - type: SubFloorHide
@@ -55,8 +55,8 @@
   - type: Rotatable
   - type: Pullable
   - type: CollideOnAnchor
-  - type: DisposalTube
-    disposalTubeType: Transit
+  - type: DisposalTube #Imp
+    disposalTubeType: Transit #Imp
   - type: ContainerContainer
     containers:
       DisposalTube: !type:Container
@@ -114,8 +114,8 @@
   - type: Construction
     graph: DisposalPipe
     node: pipe
-    containers:
-    - DisposalTransit
+    containers: #Imp
+    - DisposalTransit #Imp
 
 - type: entity
   id: DisposalTagger
@@ -148,8 +148,8 @@
   - type: Construction
     graph: DisposalPipe
     node: tagger
-    containers:
-    - DisposalTagger
+    containers: #Imp
+    - DisposalTagger #Imp
 
 - type: entity
   id: DisposalTrunk
@@ -184,8 +184,8 @@
   - type: Construction
     graph: DisposalPipe
     node: trunk
-    containers:
-    - DisposalEntry
+    containers: #Imp
+    - DisposalEntry #Imp
 
 - type: entity
   id: DisposalRouter
@@ -232,8 +232,8 @@
   - type: Construction
     graph: DisposalPipe
     node: router
-    containers:
-    - DisposalRouter
+    containers: #Imp
+    - DisposalRouter #Imp
 
 - type: entity
   id: DisposalRouterFlipped
@@ -273,8 +273,8 @@
         - SubfloorMask
   - type: Construction
     node: routerflipped
-    containers:
-    - DisposalRouter
+    containers: #Imp
+    - DisposalRouter #Imp
 
 - type: entity
   id: DisposalJunction
@@ -316,8 +316,8 @@
   - type: Construction
     graph: DisposalPipe
     node: junction
-    containers:
-    - DisposalJunction
+    containers: #Imp
+    - DisposalJunction #Imp
 
 - type: entity
   id: DisposalJunctionFlipped
@@ -357,8 +357,8 @@
         - SubfloorMask
   - type: Construction
     node: junctionflipped
-    containers:
-    - DisposalJunction
+    containers: #Imp
+    - DisposalJunction #Imp
 
 - type: entity
   id: DisposalYJunction
@@ -397,8 +397,8 @@
   - type: Construction
     graph: DisposalPipe
     node: yJunction
-    containers:
-    - DisposalJunction
+    containers: #Imp
+    - DisposalJunction #Imp
 
 - type: entity
   id: DisposalBend
@@ -433,8 +433,8 @@
   - type: Construction
     graph: DisposalPipe
     node: bend
-    containers:
-    - DisposalBend
+    containers: #Imp
+    - DisposalBend #Imp
 
 - type: entity
   parent: DisposalJunction
@@ -473,8 +473,8 @@
   - type: Construction
     graph: DisposalPipe
     node: signal_router
-    containers:
-    - DisposalSignalRouter
+    containers: #Imp
+    - DisposalSignalRouter #Imp
 
 - type: entity
   parent: DisposalSignalRouter

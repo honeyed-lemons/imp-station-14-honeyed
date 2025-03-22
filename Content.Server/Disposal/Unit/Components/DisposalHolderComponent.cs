@@ -14,7 +14,7 @@ namespace Content.Server.Disposal.Unit.Components
         ///     Sets how many seconds it takes to traverse one pipe length
         /// </summary>
         [DataField]
-        public float TraversalTime { get; set; } = 0.1f;
+        public float TraversalTime { get; set; } = 0.1f; //imp
 
         /// <summary>
         ///     The total amount of time that it will take for this entity to

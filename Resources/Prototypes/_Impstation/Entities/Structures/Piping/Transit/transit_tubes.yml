@@ -67,7 +67,7 @@
   - type: Sprite
     overrideContainerOcclusion: true
     drawdepth: BlastDoors
-    sprite: Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
     layers:
     - map: [ "pod" ]
       state: occupied_pod
@@ -75,10 +75,10 @@
     traversalTime: 0.2
   - type: ContainerContainer
     containers:
-      DisposalHolderComponent: !type:Container 
+      DisposalHolderComponent: !type:Container
         #showEnts: true
 
-  
+
 # Pipes
 
 - type: entity
@@ -89,7 +89,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: Structures/Piping/transit_tubes.rsi
+    sprite:  _Impstation/Structures/Piping/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: straight
@@ -105,7 +105,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: straight
@@ -134,7 +134,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: diagonal
@@ -173,7 +173,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: junct
@@ -213,7 +213,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: junct_f
@@ -246,7 +246,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: bend
@@ -281,7 +281,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: bend_f
@@ -316,19 +316,19 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
     layers:
     - map: [ "enum.DisposalUnitVisualLayers.Unanchored" ]
       state: station_uni
     - map: [ "enum.DisposalUnitVisualLayers.Base" ]
       state: station_uni
-    - map: [ "enum.DisposalUnitVisualLayers.BaseCharging" ]  
-      state: station_uni    
-    - map: [ "enum.DisposalUnitVisualLayers.OverlayFlush" ]     
-    - map: [ "enum.DisposalUnitVisualLayers.OverlayCharging" ]      
-    - map: [ "enum.DisposalUnitVisualLayers.OverlayReady" ]     
-    - map: [ "enum.DisposalUnitVisualLayers.OverlayFull" ]    
-    - map: [ "enum.DisposalUnitVisualLayers.OverlayEngaged" ]      
+    - map: [ "enum.DisposalUnitVisualLayers.BaseCharging" ]
+      state: station_uni
+    - map: [ "enum.DisposalUnitVisualLayers.OverlayFlush" ]
+    - map: [ "enum.DisposalUnitVisualLayers.OverlayCharging" ]
+    - map: [ "enum.DisposalUnitVisualLayers.OverlayReady" ]
+    - map: [ "enum.DisposalUnitVisualLayers.OverlayFull" ]
+    - map: [ "enum.DisposalUnitVisualLayers.OverlayEngaged" ]
   - type: Physics
     bodyType: Static
     canCollide: false
@@ -372,12 +372,12 @@
     manualFlushTime: 0.5
     disablePressure: true
     flushDelay: 0
-    flushSound: 
-    insertSound: 
+    flushSound:
+    insertSound:
   - type: DisposalEntry
     holderPrototypeId: TransitHolder
   - type: DisposalTube
-    containerId: disposals  
+    containerId: disposals
 
 - type: entity
   id: TransitTubeStation

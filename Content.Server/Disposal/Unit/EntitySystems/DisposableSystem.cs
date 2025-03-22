@@ -27,7 +27,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         [Dependency] private readonly SharedMapSystem _maps = default!;
         [Dependency] private readonly SharedPhysicsSystem _physicsSystem = default!;
         [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
-        [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
+        [Dependency] private readonly AppearanceSystem _appearanceSystem = default!; //imp
 
         private EntityQuery<DisposalTubeComponent> _disposalTubeQuery;
         private EntityQuery<DisposalUnitComponent> _disposalUnitQuery;
@@ -137,13 +137,13 @@ namespace Content.Server.Disposal.Unit.EntitySystems
                 else
                 {
                     _xformSystem.AttachToGridOrMap(entity, xform);
-                    var direction = holder.CurrentDirection == Direction.Invalid ? holder.PreviousDirection : holder.CurrentDirection;
+                    var direction = holder.CurrentDirection == Direction.Invalid ? holder.PreviousDirection : holder.CurrentDirection; //imp edit start
 
                     if (direction != Direction.Invalid && _xformQuery.TryGetComponent(gridUid, out var gridXform))
                     {
                         var directionAngle = direction.ToAngle();
                         directionAngle += _xformSystem.GetWorldRotation(gridXform);
-                        _throwing.TryThrow(entity, directionAngle.ToWorldVec() * 3f, 10f);
+                        _throwing.TryThrow(entity, directionAngle.ToWorldVec() * 3f, 10f); //imp edit end
                     }
                 }
             }
@@ -203,8 +203,8 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             RaiseLocalEvent(toUid, ref ev);
 
             holder.CurrentDirection = ev.Next;
-            holder.StartingTime = holder.TraversalTime;
-            holder.TimeLeft = holder.TraversalTime;
+            holder.StartingTime = holder.TraversalTime; //imp edit start
+            holder.TimeLeft = holder.TraversalTime; //imp edit end
             // Logger.InfoS("c.s.disposal.holder", $"Disposals dir {holder.CurrentDirection}");
 
             // Invalid direction = exit now!
@@ -214,9 +214,9 @@ namespace Content.Server.Disposal.Unit.EntitySystems
                 return false;
             }
 
-            var xform = Transform(holderUid);
+            var xform = Transform(holderUid); //imp edit start
             var parentXform = Transform(xform.ParentUid);
-            xform.LocalRotation = holder.CurrentDirection.ToAngle() - parentXform.LocalRotation;
+            xform.LocalRotation = holder.CurrentDirection.ToAngle() - parentXform.LocalRotation;  //imp edit end
 
             // damage entities on turns and play sound
             if (holder.CurrentDirection != holder.PreviousDirection)

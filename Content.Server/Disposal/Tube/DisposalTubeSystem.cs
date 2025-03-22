@@ -46,8 +46,9 @@ namespace Content.Server.Disposal.Tube
             SubscribeLocalEvent<DisposalTubeComponent, ComponentStartup>(OnStartup);
             SubscribeLocalEvent<DisposalTubeComponent, ConstructionBeforeDeleteEvent>(OnDeconstruct);
 
-            SubscribeLocalEvent<DisposalConduitComponent, GetDisposalsConnectableDirectionsEvent>(OnGetConduitConnectableDirections);
-            SubscribeLocalEvent<DisposalConduitComponent, GetDisposalsNextDirectionEvent>(OnGetConduitNextDirection);
+            SubscribeLocalEvent<DisposalConduitComponent, GetDisposalsConnectableDirectionsEvent>( // imp edit start
+                OnGetConduitConnectableDirections);
+            SubscribeLocalEvent<DisposalConduitComponent, GetDisposalsNextDirectionEvent>(OnGetConduitNextDirection); // imp edit end
 
             SubscribeLocalEvent<DisposalBendComponent, GetDisposalsConnectableDirectionsEvent>(OnGetBendConnectableDirections);
             SubscribeLocalEvent<DisposalBendComponent, GetDisposalsNextDirectionEvent>(OnGetBendNextDirection);
@@ -140,7 +141,7 @@ namespace Content.Server.Disposal.Tube
             DisconnectTube(uid, tube);
         }
 
-        private void OnGetConduitConnectableDirections(EntityUid uid, DisposalConduitComponent component, ref GetDisposalsConnectableDirectionsEvent args)
+        private void OnGetConduitConnectableDirections(EntityUid uid, DisposalConduitComponent component, ref GetDisposalsConnectableDirectionsEvent args) //imp edit start
         {
             var rotation = Transform(uid).LocalRotation;
 
@@ -184,7 +185,7 @@ namespace Content.Server.Disposal.Tube
 
                     return;
             }
-        }
+        } // imp edit end
 
         private void OnGetBendConnectableDirections(EntityUid uid, DisposalBendComponent component, ref GetDisposalsConnectableDirectionsEvent args)
         {
@@ -246,7 +247,7 @@ namespace Content.Server.Disposal.Tube
             var directions = ev.Connectable.Skip(1).ToArray();
 
             if (args.Holder.PreviousDirectionFrom == Direction.Invalid ||
-                args.Holder.PreviousDirectionFrom == next)
+                args.Holder.PreviousDirectionFrom == next) //imp edit
             {
                 args.Next = _random.Pick(directions);
                 return;
@@ -398,7 +399,7 @@ namespace Content.Server.Disposal.Tube
             var position = xform.Coordinates;
             foreach (var entity in _map.GetInDir(xform.GridUid.Value, grid, position, nextDirection))
             {
-                if (!TryComp(entity, out DisposalTubeComponent? tube) || tube.DisposalTubeType != targetTube.DisposalTubeType)
+                if (!TryComp(entity, out DisposalTubeComponent? tube) || tube.DisposalTubeType != targetTube.DisposalTubeType) //imp edit
                 {
                     continue;
                 }
@@ -474,7 +475,7 @@ namespace Content.Server.Disposal.Tube
                 return false;
 
             var xform = Transform(uid);
-            var holder = Spawn(entry.HolderPrototypeId, _transform.GetMapCoordinates(uid, xform: xform));
+            var holder = Spawn(entry.HolderPrototypeId, _transform.GetMapCoordinates(uid, xform: xform)); //imp
             var holderComponent = Comp<DisposalHolderComponent>(holder);
 
             foreach (var entity in from.Container.ContainedEntities.ToArray())

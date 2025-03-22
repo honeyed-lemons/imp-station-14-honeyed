@@ -36,12 +36,12 @@ public sealed partial class DisposalTubeComponent : Component
         }
     };
 
-    [DataField]
+    [DataField] // imp edit start
     public DisposalTubeType DisposalTubeType = DisposalTubeType.Disposals;
 }
 
 public enum DisposalTubeType
 {
     Disposals,
-    Transit
+    Transit //imp edit end
 }
