@@ -66,8 +66,8 @@
   components:
   - type: Sprite
     overrideContainerOcclusion: true
-    drawdepth: BlastDoors
-    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
+    drawdepth: Mobs
+    sprite: _Impstation/Structures/Piping/Transit/transit_pod.rsi
     layers:
     - map: [ "pod" ]
       state: occupied_pod
@@ -89,7 +89,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite:  _Impstation/Structures/Piping/transit_tubes.rsi
+    sprite:  _Impstation/Structures/Piping/Transit/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: straight
@@ -105,7 +105,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/Transit/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: straight
@@ -134,7 +134,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/Transit/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: diagonal
@@ -173,7 +173,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/Transit/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: junct
@@ -213,7 +213,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/Transit/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: junct_f
@@ -246,7 +246,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/Transit/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: bend
@@ -281,7 +281,7 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/Transit/transit_tubes.rsi
     layers:
     - map: [ "tube" ]
       state: bend_f
@@ -316,14 +316,14 @@
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Impstation/Structures/Piping/transit_tubes.rsi
+    sprite: _Impstation/Structures/Piping/Transit/transit_tubes.rsi
     layers:
     - map: [ "enum.DisposalUnitVisualLayers.Unanchored" ]
-      state: station_uni
+      state: station_uni_f
     - map: [ "enum.DisposalUnitVisualLayers.Base" ]
-      state: station_uni
+      state: station_uni_f
     - map: [ "enum.DisposalUnitVisualLayers.BaseCharging" ]
-      state: station_uni
+      state: station_uni_f
     - map: [ "enum.DisposalUnitVisualLayers.OverlayFlush" ]
     - map: [ "enum.DisposalUnitVisualLayers.OverlayCharging" ]
     - map: [ "enum.DisposalUnitVisualLayers.OverlayReady" ]
@@ -368,8 +368,8 @@
     price: 70
   - type: PowerSwitch
   - type: DisposalUnit
-    automaticEngageTime: 0.5
-    manualFlushTime: 0.5
+    automaticEngageTime: 0.0
+    manualFlushTime: 0.0
     disablePressure: true
     flushDelay: 0
     flushSound:
