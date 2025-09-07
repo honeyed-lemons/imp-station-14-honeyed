@@ -1,0 +1,74 @@
+- type: staticGrid
+  id: AbandonedOutpost
+  grid: /Maps/Ruins/abandoned_outpost.yml
+  hide: true
+
+- type: staticGrid
+  id: AtmosInterchange
+  grid: /Maps/Ruins/atmos_interchange.yml
+  hide: true
+
+- type: staticGrid
+  id: ChunkedComms
+  grid: /Maps/Ruins/chunked_tcomms.yml
+  hide: true
+
+- type: staticGrid
+  id: BiodomeSatellite
+  grid: /Maps/Ruins/biodome_satellite.yml
+  hide: true
+
+- type: staticGrid
+  id: Derelict
+  grid: /Maps/Ruins/derelict.yml
+  hide: true
+
+- type: staticGrid
+  id: DJStation
+  grid: /Maps/Ruins/djstation.yml
+  hide: true
+
+- type: staticGrid
+  id: EmptyFlagship
+  grid: /Maps/Ruins/empty_flagship.yml
+  hide: true
+
+- type: staticGrid
+  id: HydroOutpost
+  grid: /Maps/Ruins/hydro_outpost.yml
+  hide: true
+
+- type: staticGrid
+  id: OldAiSatellite
+  grid: /Maps/Ruins/old_ai_sat.yml
+  hide: true
+
+- type: staticGrid
+  id: RuinedPrisonShip
+  grid: /Maps/Ruins/ruined_prison_ship.yml
+  hide: true
+
+- type: staticGrid
+  id: SyndicateDropship
+  grid: /Maps/Ruins/syndicate_dropship.yml
+  hide: true
+
+- type: staticGrid
+  id: WhiteshipAncient
+  grid: /Maps/Ruins/whiteship_ancient.yml
+  hide: true
+
+- type: staticGrid
+  id: WhiteshipBluespaceJumper
+  grid: /Maps/Ruins/whiteship_bluespacejumper.yml
+  hide: true
+
+- type: staticGrid
+  id: Wrecklaimer
+  grid: /Maps/Ruins/wrecklaimer.yml
+  hide: true
+
+- type: staticGrid
+  id: DisplacedTelescience
+  grid: /Maps/Ruins/displaced_telescience.yml
+  hide: true

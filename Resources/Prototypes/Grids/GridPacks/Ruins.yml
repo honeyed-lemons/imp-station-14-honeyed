@@ -1,0 +1,18 @@
+- type: gridPack
+  id: RuinGridPack
+  grids:
+  - AbandonedOutpost
+  - AtmosInterchange
+  - ChunkedComms
+  - BiodomeSatellite
+  - Derelict
+  - DJStation
+  - EmptyFlagship
+  - HydroOutpost
+  - OldAiSatellite
+  - RuinedPrisonShip
+  - SyndicateDropship
+  - WhiteshipAncient
+  - WhiteshipBluespaceJumper
+  - Wrecklaimer
+  - DisplacedTelescience

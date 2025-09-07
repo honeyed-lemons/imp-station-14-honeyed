@@ -1,3 +1,4 @@
+using Content.Server.Shuttles.Prototypes;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.Dataset;
 using Content.Shared.Procedural;
@@ -46,11 +47,6 @@ public interface IGridSpawnGroup
     public ComponentRegistry AddComponents { get; set; }
 
     /// <summary>
-    /// Hide the IFF label of the grid.
-    /// </summary>
-    public bool Hide { get; set; }
-
-    /// <summary>
     /// Should we set the metadata name of a grid. Useful for admin purposes.
     /// </summary>
     public bool NameGrid { get; set; }
@@ -87,9 +83,6 @@ public sealed partial class DungeonSpawnGroup : IGridSpawnGroup
     public ComponentRegistry AddComponents { get; set; } = new();
 
     /// <inheritdoc />
-    public bool Hide { get; set; } = false;
-
-    /// <inheritdoc />
     public bool NameGrid { get; set; } = false;
 
     /// <inheritdoc />
@@ -99,7 +92,7 @@ public sealed partial class DungeonSpawnGroup : IGridSpawnGroup
 [DataRecord]
 public sealed partial class GridSpawnGroup : IGridSpawnGroup
 {
-    public List<ResPath> Paths = new();
+    public List<ProtoId<GridPackPrototype>> GridPacks = new();
 
     /// <inheritdoc />
     public float MinimumDistance { get; }
@@ -110,7 +103,6 @@ public sealed partial class GridSpawnGroup : IGridSpawnGroup
     public int MinCount { get; set; } = 1;
     public int MaxCount { get; set; } = 1;
     public ComponentRegistry AddComponents { get; set; } = new();
-    public bool Hide { get; set; } = false;
     public bool NameGrid { get; set; } = true;
     public bool StationGrid { get; set; } = true;
 }

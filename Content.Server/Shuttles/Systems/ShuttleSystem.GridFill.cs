@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Server.Shuttles.Components;
+using Content.Server.Shuttles.Prototypes;
 using Content.Server.Station.Events;
 using Content.Shared.CCVar;
 using Content.Shared.Shuttles.Components;
@@ -7,6 +8,7 @@ using Content.Shared.Station.Components;
 using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -118,40 +120,52 @@ public sealed partial class ShuttleSystem
     {
         spawned = EntityUid.Invalid;
 
-        if (group.Paths.Count == 0)
+        if (group.GridPacks.Count == 0)
         {
-            Log.Error($"Found no paths for GridSpawn");
+            Log.Error($"Found no grid packs for GridSpawn");
             return false;
         }
 
-        var paths = new ValueList<ResPath>();
+        var totalGrids = new ValueList<ProtoId<StaticGridPrototype>>();
 
         // Round-robin so we try to avoid dupes where possible.
-        if (paths.Count == 0)
+        if (totalGrids.Count == 0)
         {
-            paths.AddRange(group.Paths);
-            _random.Shuffle(paths);
+            foreach (var gridPackId in group.GridPacks)
+            {
+                var gridPack = _protoManager.Index(gridPackId);
+                totalGrids.AddRange(gridPack.Grids);
+
+            }
+            _random.Shuffle(totalGrids);
         }
 
-        var path = paths[^1];
-        paths.RemoveAt(paths.Count - 1);
+        var selectedGrid = _protoManager.Index(totalGrids[^1]);
+        totalGrids.RemoveAt(totalGrids.Count - 1);
 
-        if (_loader.TryLoadGrid(mapId, path, out var grid))
+        if (selectedGrid.Path != null && _loader.TryLoadGrid(mapId, selectedGrid.Path.Value, out var grid))
         {
             if (HasComp<ShuttleComponent>(grid))
                 TryFTLProximity(grid.Value, targetGrid);
 
             if (group.NameGrid)
             {
-                var name = path.FilenameWithoutExtension;
+                var name = selectedGrid.Path.Value.FilenameWithoutExtension;
                 _metadata.SetEntityName(grid.Value, name);
+            }
+
+            if (selectedGrid.Hide)
+            {
+                var iffComp = EnsureComp<IFFComponent>(spawned);
+                iffComp.Flags |= IFFFlags.HideLabel;
+                Dirty(spawned, iffComp);
             }
 
             spawned = grid.Value;
             return true;
         }
 
-        Log.Error($"Error loading gridspawn for {ToPrettyString(stationUid)} / {path}");
+        Log.Error($"Error loading gridspawn for {ToPrettyString(stationUid)} / {selectedGrid}");
         return false;
     }
 
@@ -195,13 +209,6 @@ public sealed partial class ShuttleSystem
                 if (_protoManager.TryIndex(group.NameDataset, out var dataset))
                 {
                     _metadata.SetEntityName(spawned, _salvage.GetFTLName(dataset, _random.Next()));
-                }
-
-                if (group.Hide)
-                {
-                    var iffComp = EnsureComp<IFFComponent>(spawned);
-                    iffComp.Flags |= IFFFlags.HideLabel;
-                    Dirty(spawned, iffComp);
                 }
 
                 if (group.StationGrid)

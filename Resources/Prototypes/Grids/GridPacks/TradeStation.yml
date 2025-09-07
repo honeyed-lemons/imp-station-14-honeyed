@@ -1,0 +1,4 @@
+- type: gridPack
+  id: TradeStationGridPack
+  grids:
+  - DefaultTradeStation
