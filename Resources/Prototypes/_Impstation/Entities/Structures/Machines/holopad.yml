@@ -6,7 +6,7 @@
   components:
   - type: Label
     currentLabel: holopad-general-docking
-    
+
 # Command
 - type: entity
   parent: Holopad
@@ -15,7 +15,7 @@
   components:
   - type: Label
     currentLabel: holopad-command-hd
-    
+
 # Service
 - type: entity
   parent: Holopad
@@ -24,7 +24,7 @@
   components:
   - type: Label
     currentLabel: holopad-command-service-storeroom
-    
+
 # Science
 - type: entity
   parent: Holopad
@@ -42,7 +42,7 @@
   components:
   - type: Label
     currentLabel: holopad-medical-psychologist
-    
+
 # Engineering
 - type: entity
   parent: Holopad
@@ -51,3 +51,11 @@
   components:
   - type: Label
     currentLabel: holopad-engineering-supermatter
+
+- type: entity
+  parent: Holopad
+  id: HolopadEngineeringBoilerRoom
+  suffix: Boiler Room
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-boiler-room

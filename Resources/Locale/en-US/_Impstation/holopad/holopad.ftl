@@ -15,3 +15,4 @@ holopad-medical-psychologist = Medical - Psychologist
 
 # Engineering
 holopad-engineering-supermatter = Engineering - Supermatter
+holopad-engineering-boiler-room = Engineering - Boiler Room

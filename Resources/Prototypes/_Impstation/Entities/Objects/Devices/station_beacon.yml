@@ -59,6 +59,14 @@
   - type: NavMapBeacon
     defaultText: station-beacon-materials
 
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconBoilerRoom
+  suffix: Boiler Room
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-boiler-room
+
 #Solars
 - type: entity
   parent: DefaultStationBeaconEngineering

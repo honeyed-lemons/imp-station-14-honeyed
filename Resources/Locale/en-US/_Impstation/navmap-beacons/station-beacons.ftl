@@ -14,6 +14,7 @@ station-beacon-mailroom = Mail
 station-beacon-smengine = Supermatter
 station-beacon-drone = Drone
 station-beacon-materials = Materials
+station-beacon-materials = Boiler Room
 
 # Solars
 station-beacon-solars-north = North Solars
