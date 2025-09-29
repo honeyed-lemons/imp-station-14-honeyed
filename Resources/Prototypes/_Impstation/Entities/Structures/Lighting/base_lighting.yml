@@ -53,7 +53,7 @@
 #Sodium lights
 - type: entity
   id: PoweredSodiumSmallLight
-  suffix: LED
+  suffix: Sodium
   parent: PoweredSmallLightEmpty
   components:
   - type: Sprite
@@ -65,7 +65,7 @@
     softness: 0.9
     color: "#FFAF38"
   - type: PoweredLight
-    hasLampOnSpawn: LedLightBulb
+    hasLampOnSpawn: SodiumLightBulb
   - type: DamageOnInteract
     damage:
       types:

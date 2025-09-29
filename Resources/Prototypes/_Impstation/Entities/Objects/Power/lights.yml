@@ -79,9 +79,10 @@
   description: A high power high energy bulb for the depths of space. Salty.
   components:
   - type: LightBulb
+    bulb: Bulb
     color: "#FFAF38"
     lightEnergy: 4
-    lightRadius: 10
+    lightRadius: 8
     lightSoftness: 0.5
     BurningTemperature: 350
     PowerUse: 100
