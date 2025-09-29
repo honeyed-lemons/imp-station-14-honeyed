@@ -129,3 +129,13 @@
     contents:
       - id: ColdLightBulb
         amount: 12
+
+- type: entity
+  name: lightbulb box sodium
+  parent: BoxLightbulb
+  id: BoxSodiumLightbulb
+  components:
+  - type: StorageFill
+    contents:
+    - id: SodiumLightBulb
+      amount: 12

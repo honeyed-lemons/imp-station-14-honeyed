@@ -71,3 +71,22 @@
     - LightBulb
     - Trash
     - LightCold
+
+- type: entity
+  parent: BaseLightbulb
+  name: sodium light bulb
+  id: SodiumLightBulb
+  description: A high power high energy bulb for the depths of space. Salty.
+  components:
+  - type: LightBulb
+    color: "#FFAF38"
+    lightEnergy: 4
+    lightRadius: 10
+    lightSoftness: 0.5
+    BurningTemperature: 350
+    PowerUse: 100
+  - type: Tag
+    tags:
+    - LightBulb
+    - Trash
+    - LightSodium

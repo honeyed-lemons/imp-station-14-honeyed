@@ -9,6 +9,11 @@
   result: ColdLightBulb
 
 - type: latheRecipe
+  parent: BaseLightRecipe
+  id: SodiumLightBulb
+  result: SodiumLightBulb
+
+- type: latheRecipe
   id: DeskBell
   result: DeskBell
   completetime: 1

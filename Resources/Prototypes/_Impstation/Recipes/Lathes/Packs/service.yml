@@ -5,6 +5,7 @@
   recipes:
   - UvLightTube
   - ColdLightBulb
+  - SodiumLightBulb
   - LightReplacer
 
 - type: latheRecipePack

@@ -49,3 +49,25 @@
       types:
         Cold: 2 # its funny
     popupText: powered-light-component-freeze-hand
+
+#Sodium lights
+- type: entity
+  id: PoweredSodiumSmallLight
+  suffix: LED
+  parent: PoweredSmallLightEmpty
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    radius: 8
+    energy: 1
+    softness: 0.9
+    color: "#FFAF38"
+  - type: PoweredLight
+    hasLampOnSpawn: LedLightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 1
+    popupText: powered-light-component-burn-hand
