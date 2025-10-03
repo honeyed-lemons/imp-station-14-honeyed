@@ -51,11 +51,3 @@
   components:
   - type: Label
     currentLabel: holopad-engineering-supermatter
-
-- type: entity
-  parent: Holopad
-  id: HolopadEngineeringBoilerRoom
-  suffix: Boiler Room
-  components:
-  - type: Label
-    currentLabel: holopad-engineering-boiler-room
