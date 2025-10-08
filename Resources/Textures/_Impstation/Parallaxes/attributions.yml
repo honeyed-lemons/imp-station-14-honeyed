@@ -7,3 +7,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from tgstation"
   source: "https://github.com/tgstation/tgstation/tree/423404b31e36c4605faacec881b324db8997b0a6"
+
+- files: ["KettleParallaxNeb_Greenish.png", "reaperparallax.png"]
+  license: "CC0-1.0"
+  copyright: "adapted from Screaming Brain Studios, edited by atdoop (github) for impstation"
+  source: "https://opengameart.org/content/seamless-space-backgrounds"
