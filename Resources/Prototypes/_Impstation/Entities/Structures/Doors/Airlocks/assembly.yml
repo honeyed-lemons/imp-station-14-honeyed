@@ -340,6 +340,25 @@
     sprite: _Impstation/Structures/Doors/Airlocks/Glass/medsci.rsi
     state: "assembly"
 
+#Viro/Sci
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyVirologyScience
+  suffix: Virology/Science
+  components:
+  - type: Sprite
+    sprite: _Impstation/Structures/Doors/Airlocks/Standard/virosci.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyVirologyScienceGlass
+  suffix: Virology/Science, Glass
+  components:
+  - type: Sprite
+    sprite: _Impstation/Structures/Doors/Airlocks/Glass/virosci.rsi
+    state: "assembly"
+
 #Mime
 - type: entity
   parent: AirlockAssembly

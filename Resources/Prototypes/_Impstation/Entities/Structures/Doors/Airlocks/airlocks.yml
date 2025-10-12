@@ -85,6 +85,14 @@
   - type: Sprite
     sprite: _Impstation/Structures/Doors/Airlocks/Standard/medsci.rsi
 
+- type: entity
+  parent: AirlockScience
+  id: AirlockVirologyScience
+  suffix: Virology/Science
+  components:
+  - type: Sprite
+    sprite: _Impstation/Structures/Doors/Airlocks/Standard/virosci.rsi
+
 # Security
 
 - type: entity
@@ -316,6 +324,14 @@
   components:
   - type: Sprite
     sprite: _Impstation/Structures/Doors/Airlocks/Glass/medsci.rsi
+
+- type: entity
+  parent: AirlockScienceGlass
+  id: AirlockVirologyScienceGlass
+  suffix: Virology/Science
+  components:
+  - type: Sprite
+    sprite: _Impstation/Structures/Doors/Airlocks/Glass/virosci.rsi
 
 # Security
 

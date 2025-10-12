@@ -10,6 +10,16 @@
     containers:
       board: [ DoorElectronicsHospitalityDirector ]
 
+# Science
+- type: entity
+  parent: AirlockVirologyScience
+  id: AirlockVirologyScienceLocked
+  suffix: Virology/Science, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedicalResearch ]
+
 # Security
 - type: entity
   parent: AirlockSecurityMedical
@@ -96,6 +106,16 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsHospitalityDirector ]
+
+# Science
+- type: entity
+  parent: AirlockVirologyScienceGlass
+  id: AirlockVirologyScienceGlassLocked
+  suffix: Virology/Science, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedicalResearch ]
 
 # Security
 - type: entity
