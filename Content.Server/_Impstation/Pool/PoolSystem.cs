@@ -1,17 +1,14 @@
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using Content.Server.Spreader;
-using Content.Shared.Atmos;
+using Content.Shared._Impstation.Pool;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Collections;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Impstation.Pool;
 
-public sealed class PoolSystem : EntitySystem
+public sealed partial class PoolSystem : SharedPoolSystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
@@ -20,11 +17,11 @@ public sealed class PoolSystem : EntitySystem
 
     public override void Initialize()
     {
+        base.Initialize();
+
         _poolQuery = GetEntityQuery<PoolComponent>();
 
-        SubscribeLocalEvent<PoolComponent, SolutionChangedEvent>(OnSolutionChanged);
         SubscribeLocalEvent<PoolComponent, SpreadNeighborsEvent>(OnPoolSpread);
-
     }
 
     private void OnPoolSpread(Entity<PoolComponent> ent, ref SpreadNeighborsEvent args)
@@ -74,11 +71,6 @@ public sealed class PoolSystem : EntitySystem
             if (args.Updates <= 0)
                 break;
         }
-
-    }
-
-    public void OnSolutionChanged(Entity<PoolComponent> ent, ref SolutionChangedEvent args)
-    {
 
     }
 }

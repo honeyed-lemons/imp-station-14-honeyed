@@ -1,8 +1,9 @@
 using Content.Shared.Chemistry.Components;
 using Content.Shared.FixedPoint;
+using Robust.Shared.GameStates;
 
-namespace Content.Server._Impstation.Pool;
-[RegisterComponent]
+namespace Content.Shared._Impstation.Pool;
+[RegisterComponent, NetworkedComponent]
 public sealed partial class PoolComponent : Component
 {
     [DataField("solution")]
@@ -13,5 +14,4 @@ public sealed partial class PoolComponent : Component
 
     [ViewVariables]
     public Entity<SolutionComponent>? Solution = null;
-
 }
